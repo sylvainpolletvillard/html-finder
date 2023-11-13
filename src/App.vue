@@ -6,7 +6,7 @@ import { tags, type Tag, TagDescription } from "./tags";
 const newTag = ref("");
 
 const tagsFound: Tag[] = reactive([]);
-const hints: Record<Tag, number> = reactive({});
+const hints: { [t in Tag]?: number } = reactive({});
 const remaining = computed(() =>
   tags.filter((tag) => !tagsFound.includes(tag))
 );
