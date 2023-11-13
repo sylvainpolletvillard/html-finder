@@ -16,7 +16,7 @@ function tryTag() {
     tags.includes(newTag.value as Tag) &&
     !tagsFound.includes(newTag.value as Tag)
   ) {
-    tagsFound.push(newTag.value as Tag);
+    tagsFound.unshift(newTag.value as Tag);
   }
   newTag.value = "";
 }
@@ -25,7 +25,7 @@ function getHint(tag: Tag) {
   if (tag && !tagsFound.includes(tag)) {
     hints[tag] = (hints[tag] ?? 0) + 1;
     if (hints[tag] === tag.length) {
-      tagsFound.push(tag);
+      tagsFound.unshift(tag);
     }
   }
 }
@@ -66,7 +66,7 @@ function getHint(tag: Tag) {
     <section id="last-found">
       <h2>Last found</h2>
       <dl>
-        <template v-for="tag in tagsFound.reverse()" :key="tag">
+        <template v-for="tag in tagsFound" :key="tag">
           <dt>
             <span class="tag">{{ tag }}</span>
           </dt>
