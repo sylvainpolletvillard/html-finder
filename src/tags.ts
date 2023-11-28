@@ -29,7 +29,6 @@ export const tags = [
   "dl",
   "dt",
   "em",
-  "embed",
   "fieldset",
   "figcaption",
   "figure",
@@ -108,8 +107,7 @@ export const tags = [
   "u",
   "ul",
   "var",
-  "video",
-  "wbr",
+  "video"
 ] as const;
 
 export type Tag = (typeof tags)[number];
