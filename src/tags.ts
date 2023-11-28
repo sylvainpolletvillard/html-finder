@@ -107,7 +107,7 @@ export const tags = [
   "u",
   "ul",
   "var",
-  "video"
+  "video",
 ] as const;
 
 export type Tag = (typeof tags)[number];
@@ -147,8 +147,6 @@ export const TagDescription: Record<Tag, string> = {
   dl: "Defines a description list",
   dt: "Defines a term/name in a description list",
   em: "Defines emphasized text ",
-  embed:
-    "Embeds external content at the specified point in the document. This content is provided by an external application or other source of interactive content such as a browser plug-in.",
   fieldset: "Groups related elements in a form",
   figcaption:
     "Represents a caption or legend describing the rest of the contents of its parent <figure> element.",
@@ -240,5 +238,4 @@ export const TagDescription: Record<Tag, string> = {
   ul: "Defines an unordered list",
   var: "Defines a variable",
   video: "Defines a video or movie",
-  wbr: "Defines a possible line-break",
 };
