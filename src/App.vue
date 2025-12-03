@@ -29,6 +29,14 @@ function getHint(tag: Tag) {
     }
   }
 }
+
+function revealRandomTag() {
+  if (remaining.value.length > 0) {
+    const randomIndex = Math.floor(Math.random() * remaining.value.length);
+    const randomTag = remaining.value[randomIndex];
+    tagsFound.unshift(randomTag);
+  }
+}
 </script>
 
 <template>
@@ -46,6 +54,9 @@ function getHint(tag: Tag) {
           >Enter a HTML tag:
           <input type="text" v-model="newTag" @keypress.enter="tryTag" />
         </label>
+        <button v-if="remaining.length > 0" @click="revealRandomTag" style="margin-left: 1rem">
+          Give me next one
+        </button>
         <ConfettiExplosion v-if="remaining.length === 0" />
       </header>
       <ul id="to-find">
